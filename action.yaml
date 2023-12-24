@@ -1,6 +1,6 @@
 name: Setup Bats and libs
 description: A GitHub Action for installing Bats and Bats-libs(support, assert, detik, file)
-author: Brokenpip3
+author: bats-core
 branding:
   color: yellow
   icon: command
