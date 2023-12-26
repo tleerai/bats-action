@@ -22,7 +22,7 @@ jobs:
        - name: Checkout
          uses: actions/checkout@v2
        - name: Setup Bats and bats libs
-         uses: bats-core/setup-bats-libs@1.5.3
+         uses: bats-core/bats-action@1.5.4
 ```
 
 ## Libraries Path
@@ -35,7 +35,7 @@ For example, if you want to install `bats-support` in the `./test/bats-support` 
 ``` yaml
 # ...
        - name: Setup Bats and Bats libs
-         uses: bats-core/setup-bats-libs@1.5.3
+         uses: bats-core/bats-action@1.5.4
          with:
            support-path: ${{ github.workspace }}/test/bats-support
 ```

@@ -19,7 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Bats and Bats libs
-        id: setup-bats-libs
+        id: bats-action
         uses: ./
         with:
           support-clean: "false"
@@ -31,23 +31,23 @@ jobs:
           file-clean: "false"
           file-path: "${{ github.workspace }}/tests/bats-file"
       - name: Execute test to check Bats-support
-        if: steps.setup-bats-libs.outputs.support-installed == 'true'
+        if: steps.bats-action.outputs.support-installed == 'true'
         run: |
           cd /tmp/bats-support/
           bats test
       - name: Execute test to check  Bats-assert
-        if: steps.setup-bats-libs.outputs.assert-installed == 'true'
+        if: steps.bats-action.outputs.assert-installed == 'true'
         run: |
           ls -l $BATS_LIB_PATH/
           cd /tmp/bats-assert/
           bats test
       - name: Execute test to check Bats-detik
-        if: steps.setup-bats-libs.outputs.detik-installed == 'true'
+        if: steps.bats-action.outputs.detik-installed == 'true'
         run: |
           cd /tmp/bats-detik/
           bats tests
       - name: Execute test to check Bats-file
-        if: steps.setup-bats-libs.outputs.file-installed == 'true'
+        if: steps.bats-action.outputs.file-installed == 'true'
         # Currently the bats-file tests are broken
         # in gh runner env
         continue-on-error: true
@@ -68,7 +68,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Bats and Bats libs
-        id: setup-bats-libs
+        id: bats-action
         uses: ./
         with:
           support-clean: "false"
@@ -80,23 +80,23 @@ jobs:
           file-clean: "false"
           file-path: "${{ github.workspace }}/tests/bats-file"
       - name: Execute test to check Bats-support
-        if: steps.setup-bats-libs.outputs.support-installed == 'true'
+        if: steps.bats-action.outputs.support-installed == 'true'
         run: |
           cd /tmp/bats-support/
           bats test
       - name: Execute test to check  Bats-assert
-        if: steps.setup-bats-libs.outputs.assert-installed == 'true'
+        if: steps.bats-action.outputs.assert-installed == 'true'
         run: |
           ls -l $BATS_LIB_PATH/
           cd /tmp/bats-assert/
           bats test
       - name: Execute test to check Bats-detik
-        if: steps.setup-bats-libs.outputs.detik-installed == 'true'
+        if: steps.bats-action.outputs.detik-installed == 'true'
         run: |
           cd /tmp/bats-detik/
           bats tests
       - name: Execute test to check Bats-file
-        if: steps.setup-bats-libs.outputs.file-installed == 'true'
+        if: steps.bats-action.outputs.file-installed == 'true'
         # Currently the bats-file tests are broken
         # in gh runner env
         continue-on-error: true
