@@ -1,4 +1,4 @@
-name: Setup Bats and Bats libs under the bats-core organization
+name: Setup Bats and Bats libraries
 description: A GitHub Action for installing Bats and Bats-libs(support, assert, detik, file)
 author: bats-core
 branding:
