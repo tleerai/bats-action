@@ -103,7 +103,7 @@ runs:
   steps:
     # This action would be much easier if only matrix steps will be supported in a composite action
     - name: "Set cache for Bats"
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       if: inputs.bats-install == 'true'
       id: bats-cache
       with:
@@ -163,7 +163,7 @@ runs:
         rm -rf ${TEMPDIR} || exit 0
 
     - name: "Set cache for Bats-support"
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       if: inputs.support-install == 'true'
       id: support-cache
       with:
@@ -196,7 +196,7 @@ runs:
         [[ "${{ inputs.support-clean }}" = "true"  ]] && rm -rf ${TEMPDIR} || exit 0
 
     - name: "Set cache for Bats-assert"
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       if: inputs.assert-install == 'true'
       id: assert-cache
       with:
@@ -229,7 +229,7 @@ runs:
         [[ "${{ inputs.assert-clean }}" = "true"  ]] && rm -rf ${TEMPDIR} || exit 0
 
     - name: "Set cache for Bats-detik"
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       if: inputs.detik-install == 'true'
       id: detik-cache
       with:
@@ -261,7 +261,7 @@ runs:
         [[ "${{ inputs.detik-clean }}" = "true"  ]] && rm -rf ${TEMPDIR} || exit 0
 
     - name: "Set cache for Bats-file"
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       if: inputs.file-install == 'true'
       id: file-cache
       with:
